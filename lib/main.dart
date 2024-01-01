@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tea_app/model/tea_shop.dart';
-import 'package:tea_app/pages/home_page.dart';
+import 'package:tea_app/pages/auth/login_page.dart';
 
 void main() {
   runApp(const MyAPP());
@@ -20,7 +20,7 @@ class MyAPP extends StatelessWidget {
           theme: ThemeData(
             useMaterial3: true,
           ),
-          home: const HomePage(),
+          home: const LoginPage(),
         );
       },
     );
