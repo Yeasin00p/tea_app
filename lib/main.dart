@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tea_app/model/tea_shop.dart';
 import 'package:tea_app/pages/home_page.dart';
 
 void main() {
@@ -10,13 +12,17 @@ class MyAPP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tea App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) => TeaShop(),
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            useMaterial3: true,
+          ),
+          home: const HomePage(),
+        );
+      },
     );
   }
 }

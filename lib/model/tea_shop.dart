@@ -1,6 +1,7 @@
+import 'package:flutter/widgets.dart';
 import 'package:tea_app/model/tea.dart';
 
-class TeaShop {
+class TeaShop extends ChangeNotifier {
   final List<Tea> _shop = [
     Tea(
       name: 'bubble_tea',
@@ -23,9 +24,11 @@ class TeaShop {
   List<Tea> get userCart => _userCart;
   void addItemToCart(Tea tea) {
     _userCart.add(tea);
+    notifyListeners();
   }
 
   void removeItemToCart(Tea tea) {
     _userCart.remove(tea);
+    notifyListeners();
   }
 }
